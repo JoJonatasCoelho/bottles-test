@@ -14,7 +14,9 @@ func _ready() -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
     queue_free()
 
-func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
-    bottle_sprite.play("break")
-    await bottle_sprite.animation_finished
-    queue_free()
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+   if event is InputEventMouseButton:
+        if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+            bottle_sprite.play("break")
+            await bottle_sprite.animation_finished
+            queue_free()
