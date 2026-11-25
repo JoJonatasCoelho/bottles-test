@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvgt5dp5ftso4"]
+
+[ext_resource type="Texture2D" uid="uid://fm1ny4ctod4c" path="res://assets/bg.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bacd034cwrwha" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://buw62i6w6ku4m" path="res://bottle/bottle.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://qebjgpljx6oh" path="res://player/player.gd" id="4_1bvp3"]
+
+[node name="Main" type="Node2D" unique_id=1990133605]
+script = ExtResource("1_h2yge")
+bottle_scene = ExtResource("2_h2yge")
+
+[node name="Background" type="TextureRect" parent="." unique_id=639929338]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0xm2m")
+
+[node name="Player" type="Node" parent="." unique_id=992760290]
+script = ExtResource("4_1bvp3")

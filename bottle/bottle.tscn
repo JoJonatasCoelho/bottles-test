@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://buw62i6w6ku4m"]
+
+[ext_resource type="Script" uid="uid://sxt7d4s6vwkf" path="res://bottle/bottle.gd" id="1_cclex"]
+[ext_resource type="SpriteFrames" uid="uid://di2gvdkg02ev4" path="res://assets/garrafa_animation.tres" id="2_cclex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkyey"]
+size = Vector2(38, 97)
+
+[node name="Bottle" type="RigidBody2D" unique_id=75266465 node_paths=PackedStringArray("bottle_sprite")]
+script = ExtResource("1_cclex")
+bottle_sprite = NodePath("Animation")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=113376551]
+sprite_frames = ExtResource("2_cclex")
+animation = &"break"
+frame = 2
+frame_progress = 1.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1147362740]
+
+[node name="Area2D" type="Area2D" parent="VisibleOnScreenNotifier2D" unique_id=1632297362]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibleOnScreenNotifier2D/Area2D" unique_id=2067070104]
+position = Vector2(-1, -5.5)
+shape = SubResource("RectangleShape2D_kkyey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831573724]
+position = Vector2(-1, -5.5)
+shape = SubResource("RectangleShape2D_kkyey")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="input_event" from="VisibleOnScreenNotifier2D/Area2D" to="." method="_on_area_2d_input_event"]

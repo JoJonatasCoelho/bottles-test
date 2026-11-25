@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://di2gvdkg02ev4"]
+
+[ext_resource type="Texture2D" uid="uid://3qre2yhg5345" path="res://assets/garrafa_quebrada.png" id="1_inpcf"]
+[ext_resource type="Texture2D" uid="uid://g1h2o6h7s4qi" path="res://assets/garrafa.png" id="2_i35fa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxwsx"]
+atlas = ExtResource("1_inpcf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5puta"]
+atlas = ExtResource("1_inpcf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqd2r"]
+atlas = ExtResource("1_inpcf")
+region = Rect2(256, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_oxwsx")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_5puta")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_qqd2r")
+}],
+"loop": 0,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i35fa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
